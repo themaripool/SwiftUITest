@@ -28,7 +28,8 @@ class form_test: XCTestCase {
         let userTextField = self.app.textFields["userTextField"]
         userTextField.tap()
         sleep(2)
-        userTextField.typeText("batman")
+        userTextField.typeText("batman\n")
+
         
         let username = userTextField.value as? String
         
@@ -38,12 +39,12 @@ class form_test: XCTestCase {
         }
     
     }
-    
+
     func test_checkPassword(){
         
         let passwordTextField = self.app.textFields["passwordTextField"]
         passwordTextField.tap()
-        passwordTextField.typeText("12345678AX")
+        passwordTextField.typeText("12345678AX\n")
         
         let password = passwordTextField.value as? String
         guard let testPassword = password, !testPassword.isEmpty else {
